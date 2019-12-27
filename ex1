@@ -1,0 +1,18 @@
+typedef struct{
+  node* link;
+  int data;
+}node;
+
+ReverseLinkedList(node* List){
+  node* current = List;
+  node* next, previous = nullptr;
+  
+  while(next!=nullptr){
+    next = current->link;
+    current->link = previous;
+    previous = current;
+    current = next;
+  }
+  
+  return previous;
+}
